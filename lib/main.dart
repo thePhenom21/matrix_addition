@@ -50,8 +50,6 @@ class HomePage extends ConsumerWidget {
       )),
     );
   }
-
-  
 }
 
 StateProvider<TextEditingController> m1row1column1Provider =
@@ -320,46 +318,46 @@ class Matrix3_2 extends ConsumerWidget {
 }
 
 calculate(WidgetRef ref) async {
-  try{
-    return Dio().post("localhost:8080/calculate",data: 
-        {
-          {
-          "matrix1":{
-            "row1":[
-                ref.watch(m1row1column1Provider),
-                ref.watch(m1row1column2Provider),
-                ref.watch(m1row1column3Provider),
-            ],
-            "row2":[
-                ref.watch(m1row2column1Provider),
-                ref.watch(m1row2column2Provider),
-                ref.watch(m1row2column3Provider),
-            ],
-            "row3":[
-                ref.watch(m1row3column1Provider),
-                ref.watch(m1row3column2Provider),
-                ref.watch(m1row3column3Provider),
-            ]             
-          },
-          "matrix2":{
-            "row1":[
-                ref.watch(m2row1column1Provider),
-                ref.watch(m2row1column2Provider),
-                ref.watch(m2row1column3Provider),
-            ],
-            "row2":[
-                ref.watch(m2row2column1Provider),
-                ref.watch(m2row2column2Provider),
-                ref.watch(m2row2column3Provider),
-            ],
-            "row3":[
-                ref.watch(m2row3column1Provider),
-                ref.watch(m2row3column2Provider),
-                ref.watch(m2row3column3Provider),
-            ]  
-          }
-}
+  try {
+    return Dio().post("localhost:8080/calculate", data: {
+      {
+        "matrix1": {
+          "row1": [
+            ref.watch(m1row1column1Provider),
+            ref.watch(m1row1column2Provider),
+            ref.watch(m1row1column3Provider),
+          ],
+          "row2": [
+            ref.watch(m1row2column1Provider),
+            ref.watch(m1row2column2Provider),
+            ref.watch(m1row2column3Provider),
+          ],
+          "row3": [
+            ref.watch(m1row3column1Provider),
+            ref.watch(m1row3column2Provider),
+            ref.watch(m1row3column3Provider),
+          ]
+        },
+        "matrix2": {
+          "row1": [
+            ref.watch(m2row1column1Provider),
+            ref.watch(m2row1column2Provider),
+            ref.watch(m2row1column3Provider),
+          ],
+          "row2": [
+            ref.watch(m2row2column1Provider),
+            ref.watch(m2row2column2Provider),
+            ref.watch(m2row2column3Provider),
+          ],
+          "row3": [
+            ref.watch(m2row3column1Provider),
+            ref.watch(m2row3column2Provider),
+            ref.watch(m2row3column3Provider),
+          ]
         }
-    );  
+      }
+    });
+  } on DioException catch (err) {
+    print(err);
   }
 }
