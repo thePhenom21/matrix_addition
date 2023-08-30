@@ -32,7 +32,20 @@ class HomePage extends ConsumerWidget {
     return Scaffold(
       body: Center(
           child: Row(
-        children: [Matrix3_1(), Matrix3_2()],
+        children: [
+          Matrix3_1(),
+          Matrix3_2(),
+          IconButton(
+              iconSize: 50,
+              onPressed: () async {
+                try {
+                  var a = await calculate(ref);
+                } catch (err) {
+                  print(err);
+                }
+              },
+              icon: Icon(Icons.calculate))
+        ],
       )),
     );
   }

@@ -38,6 +38,7 @@ dependencies:
   flutter_riverpod: ^2.3.10
   matrix_input: ^1.1.0
   number_inc_dec: ^0.8.0
+  dio: ^5.3.2
 
 dev_dependencies:
   flutter_test:
