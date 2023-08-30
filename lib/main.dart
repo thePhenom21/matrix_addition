@@ -49,6 +49,8 @@ class HomePage extends ConsumerWidget {
       )),
     );
   }
+
+  calculate(WidgetRef ref) {}
 }
 
 StateProvider<TextEditingController> m1row1column1Provider =
